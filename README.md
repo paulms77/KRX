@@ -1,7 +1,50 @@
-KRX 주식 투자 알고리즘
+# KRX Stock Trading Algorithm
 
-|Title|Progress|Source|Lisence|
-|---|---|---|---|
-|예선 코드|예선|[GitHub Pages](https://github.com/paulms77/KRX/blob/main/KRX_Project_paul77ms.ipynb)|Free|
-|투자 알고리즘 설명서|본선|[GitHub Pages](https://github.com/paulms77/KRX/blob/main/%E1%84%90%E1%85%AE%E1%84%8C%E1%85%A1%E1%84%8B%E1%85%A1%E1%86%AF%E1%84%80%E1%85%A9%E1%84%85%E1%85%B5%E1%84%8C%E1%85%B3%E1%86%B7%E1%84%89%E1%85%A5%E1%86%AF%E1%84%86%E1%85%A7%E1%86%BC%E1%84%89%E1%85%A5_%E1%84%90%E1%85%B5%E1%86%B728_paul77ms.pdf)|Free|
-|연구 코드 및 논문|사이드 프로젝트|[GitHub Pages](https://github.com/paulms77/BiLSTM-StockPrediction-Algorithm)|Apache 2.0|
+Entry for the **KRX (Korea Exchange) stock trading algorithm competition** —
+reached the finals (본선 진출).
+
+The competition ran in two stages: a qualifying round judged on submitted code,
+and a final round judged on a written algorithm specification defending the
+strategy.
+
+---
+
+## Contents
+
+| Stage | Item | File |
+| --- | --- | --- |
+| Qualifier | Trading algorithm notebook | [`krx-trading-algorithm.ipynb`](krx-trading-algorithm.ipynb) |
+| Final | Algorithm specification (Korean, PDF) | [`investment-algorithm-specification.pdf`](investment-algorithm-specification.pdf) |
+
+## The approach
+
+The notebook builds a quantitative strategy over KRX-listed equities: price and
+volume data is assembled, technical indicators and engineered features are
+derived from it, and signals drive a backtested rule set. The specification PDF
+documents the reasoning, the indicator choices and the risk handling behind the
+submitted algorithm.
+
+## Running it
+
+```bash
+git clone https://github.com/paulms77/KRX.git
+cd KRX
+
+pip install pandas numpy FinanceDataReader pykrx matplotlib scikit-learn
+jupyter notebook krx-trading-algorithm.ipynb
+```
+
+Market data is pulled through `FinanceDataReader` and `pykrx` at runtime rather
+than being stored in the repository.
+
+## Related
+
+| Repository | Relation |
+| --- | --- |
+| [BiLSTM-StockPrediction-Algorithm](https://github.com/paulms77/BiLSTM-StockPrediction-Algorithm) | The research side project this grew into — bidirectional LSTM price prediction with a paper |
+| [Dacon](https://github.com/paulms77/Dacon) | The qualifying notebook also sits with the other DACON entries |
+| [bitcoin](https://github.com/paulms77/bitcoin) | RSI-driven automated trading on Upbit |
+
+## License
+
+Competition code — free to reference.
